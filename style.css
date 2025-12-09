@@ -1,0 +1,400 @@
+/* =========================================
+   VARIÁVEIS E RESET
+   ========================================= */
+:root {
+    --azul: #4DA1CE;
+    --laranja: #F09638;
+    --escuro: #2C3E50;
+    --fundo: #F9FAFB;
+    --cinza-claro: #f4f6f8;
+    --borda: #e1e4e8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--escuro);
+}
+
+/* =========================================
+   HEADER & NAVEGAÇÃO
+   ========================================= */
+header {
+    background: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    color: var(--laranja);
+}
+
+.logo img {
+    max-height: 60px; /* Ajuste este valor para aumentar ou diminuir a logo */
+    width: auto;      /* Mantém a proporção correta */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--escuro);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--azul);
+}
+
+/* =========================================
+   BOTÕES GERAIS
+   ========================================= */
+.btn-cta {
+    background: linear-gradient(90deg, var(--azul) 0%, var(--laranja) 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(240, 150, 56, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   SEÇÃO HERO (HOME)
+   ========================================= */
+.hero {
+    padding: 80px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(0deg, var(--azul), var(--laranja));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-img {
+    width: 45%;
+    height: 350px;
+    background: #eee;
+    border-radius: 20px;
+    /* Placeholder para imagem de servidor/ti */
+    background-image: url('https://images.unsplash.com/photo-1558494949-ef526b0042a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 20px 20px 0px rgba(77, 161, 206, 0.1);
+}
+
+/* =========================================
+   SEÇÃO DE SERVIÇOS (CARDS SIMPLES)
+   ========================================= */
+.services {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 50px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    border-bottom: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--laranja);
+}
+
+.icon-box {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--azul);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   SEÇÃO DE PREÇOS / PLANOS
+   ========================================= */
+.pricing-section {
+    padding: 80px 5%;
+    background-color: var(--cinza-claro);
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--escuro);
+}
+
+.section-header h2 span {
+    color: var(--azul);
+}
+
+.section-header p {
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Grid dos Cards de Preço */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* Card Base de Preço */
+.plan-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-top: 5px solid var(--azul);
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(77, 161, 206, 0.2);
+}
+
+/* Destaque para o Plano Intermediário */
+.plan-card.popular {
+    border-top: 5px solid var(--laranja);
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: 0 15px 40px rgba(240, 150, 56, 0.15);
+}
+
+.plan-card.popular:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.popular-tag {
+    background-color: var(--laranja);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+}
+
+/* Conteúdo do Card de Preço */
+.plan-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--escuro);
+}
+
+.plan-price {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.features-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.features-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--borda);
+    font-size: 15px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+.features-list li::before {
+    content: '✓';
+    color: var(--azul);
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Ícone especial para features acumuladas (+) */
+.features-list li.included::before {
+    content: '+';
+    color: var(--laranja);
+    font-size: 20px;
+}
+
+.features-list li.included {
+    font-weight: 600;
+    color: var(--escuro);
+    background-color: #fff8f0; /* Fundo leve laranja */
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border-bottom: none;
+}
+
+/* Botões dos Planos */
+.btn-plan {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-outline {
+    border: 2px solid var(--azul);
+    color: var(--azul);
+}
+
+.btn-outline:hover {
+    background-color: var(--azul);
+    color: white;
+}
+
+.btn-filled {
+    background: linear-gradient(90deg, var(--azul) 0%, var(--laranja) 100%);
+    color: white;
+    border: none;
+}
+
+.btn-filled:hover {
+    opacity: 0.9;
+    box-shadow: 0 5px 15px rgba(240, 150, 56, 0.4);
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+footer {
+    background: var(--escuro);
+    color: white;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero-img {
+        width: 100%;
+    }
+
+    nav ul {
+        display: none; /* Em site real, aqui iria o menu hambúrguer */
+    }
+
+    .plan-card.popular {
+        transform: scale(1);
+    }
+
+    .plan-card.popular:hover {
+        transform: translateY(-10px);
+    }
+}
