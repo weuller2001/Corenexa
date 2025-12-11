@@ -859,3 +859,30 @@ footer {
         font-size: 24px;
     }
 }
+
+/* --- Mensagem de Status do Formulário --- */
+#my-form-status {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    display: none; /* Começa escondido */
+}
+
+/* Quando der certo (Verde) */
+#my-form-status.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Quando der erro (Vermelho) */
+#my-form-status.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
