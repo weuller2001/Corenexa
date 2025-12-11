@@ -76,31 +76,30 @@
                 </a>
             </div>
 
-            <div class="contact-form-card">
-                <form action="#">
-                    <div class="form-group">
-                        <label for="nome">Seu Nome</label>
-                        <input type="text" id="nome" placeholder="Ex: João Pedro" required>
-                    </div>
+            <form action="https://formspree.io/f/xeoyrdeg" method="POST">
+    
+				<div class="form-group">
+					<label for="nome">Seu Nome</label>
+					<input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+				</div>
 
-                    <div class="form-group">
-                        <label for="email">E-mail Corporativo</label>
-                        <input type="email" id="email" placeholder="seu@email.com" required>
-                    </div>
+				<div class="form-group">
+					<label for="email">E-mail Corporativo</label>
+					<input type="email" id="email" name="email" placeholder="seu@email.com" required>
+				</div>
 
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" placeholder="(31) 00000-0000">
-                    </div>
+				<div class="form-group">
+					<label for="telefone">Telefone</label>
+					<input type="tel" id="telefone" name="telefone" placeholder="(31) 00000-0000">
+				</div>
 
-                    <div class="form-group">
-                        <label for="mensagem">Como podemos ajudar?</label>
-                        <textarea id="mensagem" rows="4" placeholder="Descreva brevemente sua necessidade..."></textarea>
-                    </div>
+				<div class="form-group">
+					<label for="mensagem">Como podemos ajudar?</label>
+					<textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva brevemente sua necessidade..."></textarea>
+				</div>
 
-                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                </form>
-            </div>
+				<button type="submit" class="btn-submit">Enviar Mensagem</button>
+			</form>
 
         </div>
     </section>
