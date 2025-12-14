@@ -68,6 +68,14 @@ nav a:hover {
     color: var(--azul);
 }
 
+@media (min-width: 769px) {
+    nav {
+        /* As margens automáticas fazem o elemento ocupar o centro do espaço livre */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /* =========================================
    BOTÕES GERAIS
    ========================================= */
@@ -1708,4 +1716,54 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
     .services-hero h1 { font-size: 32px; }
+}
+
+/* =========================================
+   INTRODUÇÃO GESTÃO 360
+   ========================================= */
+.intro-gestao {
+    text-align: center;
+    padding: 80px 5% 40px 5%; /* Padding ajustado */
+    background-color: white;
+}
+
+.container-intro {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tag-destaque {
+    background-color: #e3f2fd; /* Azul bem clarinho */
+    color: var(--azul);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.intro-gestao h1 {
+    font-size: 42px;
+    color: var(--escuro);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.intro-gestao h1 span {
+    color: var(--azul);
+}
+
+.intro-gestao p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .intro-gestao h1 {
+        font-size: 32px;
+    }
 }
