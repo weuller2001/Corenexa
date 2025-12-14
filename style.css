@@ -1223,6 +1223,9 @@ footer {
     color: var(--escuro);
     line-height: 1.2;
     margin-bottom: 20px;
+	
+	background: none;                
+    -webkit-text-fill-color: initial;
 }
 
 .sa-hero h1 span {
