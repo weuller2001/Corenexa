@@ -990,6 +990,13 @@ footer {
         font-size: 13px;
         border-bottom: 1px solid #eee; /* Linha separadora sutil no mobile */
     }
+	
+	.dropdown-item.active .dropdown-menu {
+        display: flex;
+        position: static;
+        animation: none;
+    }
+	
 }
 
 /* =========================================

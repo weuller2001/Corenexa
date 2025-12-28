@@ -95,3 +95,26 @@ if (mensagemField) {
         mensagemField.value = `Olá! Gostaria de solicitar um orçamento para o Plano ${nomePlano}.\n\nAguardo contato.`;
     }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    // Seleciona o link "Serviços"
+    const menuServicos = document.querySelector('.dropdown-link');
+    // Seleciona o pai (LI) que contém o submenu
+    const parentItem = document.querySelector('.dropdown-item');
+
+    if (menuServicos && parentItem) {
+        menuServicos.addEventListener('click', function(e) {
+            // Verifica se é celular (largura menor ou igual a 768px)
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // 1. IMPEDE de ir para a página pageServicos.html
+                parentItem.classList.toggle('active'); // 2. Abre ou fecha o menu
+            }
+        });
+    }
+    
+    // Opcional: Fechar o menu se clicar fora dele
+    document.addEventListener('click', function(e) {
+        if (!parentItem.contains(e.target)) {
+            parentItem.classList.remove('active');
+        }
+    });
+});
