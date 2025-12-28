@@ -900,32 +900,37 @@ footer {
    ========================================= */
 
 /* 1. O Item da lista principal precisa ser RELATIVO */
-/* Isso serve de âncora para o menu suspenso saber onde aparecer */
 .dropdown-item {
     position: relative;
-    height: 100%; /* Garante altura total para o hover não falhar */
+    height: 100%;
 }
 
 /* 2. Estilo do Menu Escondido */
 .dropdown-menu {
-    display: none; /* Começa invisível */
-    position: absolute; /* Flutua por cima do conteúdo */
-    top: 100%; /* Fica logo abaixo do link pai */
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
     background-color: white;
-    min-width: 220px; /* Largura mínima para não quebrar texto */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Sombra elegante */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px 0;
+    min-width: 200px; /* Largura um pouco menor */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    
+    /* MUDANÇA 1: Padding do container reduzido */
+    padding: 5px 0; 
+    
     list-style: none;
-    z-index: 1000; /* Garante que fique acima de tudo (imagens, textos) */
-    flex-direction: column; /* Garante que os itens fiquem um embaixo do outro */
+    z-index: 1000;
+    flex-direction: column;
+    
+    /* MUDANÇA 2: Garante zero espaço extra entre itens */
+    gap: 0; 
 }
 
-/* 3. A Mágica: Mostra o menu quando passa o mouse no pai (.dropdown-item) */
+/* 3. Mostra o menu quando passa o mouse */
 .dropdown-item:hover .dropdown-menu {
-    display: flex; /* Aparece! */
-    animation: fadeIn 0.3s ease; /* Efeito suave opcional */
+    display: flex;
+    animation: fadeIn 0.2s ease; /* Animação mais rápida */
 }
 
 /* 4. Estilo dos Links dentro do Dropdown */
@@ -934,23 +939,28 @@ footer {
 }
 
 .dropdown-menu li a {
-    display: block; /* Ocupa a linha toda */
-    padding: 12px 20px;
+    display: block;
     color: var(--escuro);
-    font-size: 14px;
-    text-align: left; /* Alinha texto à esquerda */
-    white-space: nowrap; /* Impede que o texto quebre linha */
+    text-align: left;
+    white-space: nowrap;
     transition: 0.2s;
+    
+    /* MUDANÇA 3: Padding vertical reduzido de 8px para 6px */
+    padding: 10px 20px; 
+    
+    /* MUDANÇA 4: Reduz a altura da linha e o tamanho da fonte */
+    font-size: 14px;
+    line-height: 1.5; 
 }
 
 /* Hover nos itens do submenu */
 .dropdown-menu li a:hover {
-    background-color: var(--cinza-claro); /* Fundo cinza suave */
-    color: var(--azul); /* Texto azul */
-    padding-left: 25px; /* Pequeno movimento para a direita */
+    background-color: var(--cinza-claro);
+    color: var(--azul);
+    padding-left: 25px;
 }
 
-/* Pequena animação de entrada */
+/* Animação */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -960,25 +970,25 @@ footer {
    AJUSTE PARA CELULAR (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
-    /* No celular, não queremos menu flutuante, queremos que empurre o conteúdo */
     .dropdown-menu {
-        position: static; /* Remove a flutuação */
-        display: none; /* Mantém escondido até clicar (se tiver script) ou deixa visível */
-        box-shadow: none; /* Remove sombra */
-        background-color: #f9f9f9; /* Fundo levemente diferente */
+        position: static;
+        display: none;
+        box-shadow: none;
+        background-color: #f9f9f9;
         width: 100%;
-        padding-left: 0;
+        padding: 0; /* Remove padding extra no mobile */
     }
     
-    /* No celular, ao passar o mouse (ou clicar), mostra em bloco */
     .dropdown-item:hover .dropdown-menu {
         display: flex;
     }
 
     .dropdown-menu li a {
+        padding: 10px 0; /* No celular, um pouco maior para o dedo acertar */
         padding-left: 0;
-        text-align: center; /* Centraliza no celular */
+        text-align: center;
         font-size: 13px;
+        border-bottom: 1px solid #eee; /* Linha separadora sutil no mobile */
     }
 }
 
@@ -1766,4 +1776,397 @@ footer {
     .intro-gestao h1 {
         font-size: 32px;
     }
+}
+
+/* =========================================
+   PÁGINA TABELAS AVULSAS
+   ========================================= */
+
+.avulso-hero {
+    background-color: var(--escuro);
+    color: white;
+    text-align: center;
+    padding: 60px 5%;
+}
+
+.avulso-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.avulso-hero h1 span {
+    color: var(--laranja);
+}
+
+.tables-section {
+    padding: 60px 5%;
+    background-color: var(--cinza-claro);
+}
+
+.table-block {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+    overflow: hidden; /* Arredonda as pontas da tabela */
+    border: 1px solid var(--borda);
+}
+
+.table-header-title {
+    padding: 25px;
+    border-bottom: 1px solid var(--borda);
+    background-color: white;
+}
+
+.table-header-title h3 {
+    color: var(--azul);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.table-header-title p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Container responsivo para celular (scroll lateral) */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Garante que a tabela não esprema no celular */
+}
+
+.prices-table th {
+    background-color: #f8f9fa;
+    color: var(--escuro);
+    font-weight: 700;
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 2px solid var(--borda);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.prices-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-size: 15px;
+}
+
+/* Efeito Zebrado (Linha sim, linha não) */
+.prices-table tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.prices-table tbody tr:hover {
+    background-color: #e3f2fd; /* Azul bem clarinho ao passar o mouse */
+}
+
+/* Destaques de Preço */
+.highlight-price {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.free-price {
+    color: #27ae60; /* Verde */
+    font-weight: 700;
+    background-color: #e8f8f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+small {
+    font-size: 12px;
+    color: #999;
+}
+
+/* =========================================
+   CARDS DE PREÇO ATUALIZADOS
+   ========================================= */
+.plan-limit {
+    font-size: 14px;
+    color: var(--azul);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-box {
+    color: var(--escuro);
+    margin: 10px 0;
+}
+
+.price-box .currency {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+.price-box .value {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--escuro);
+}
+
+.price-box .period {
+    font-size: 14px;
+    color: #888;
+}
+
+.contract-info {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    background: #f0f0f0;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.extra-pc {
+    font-size: 13px;
+    color: var(--laranja);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   SEÇÃO CALCULADORA PERSONALIZADA
+   ========================================= */
+.custom-plan {
+    padding: 80px 5%;
+    background-color: white;
+    border-top: 1px solid var(--borda);
+}
+
+.custom-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.custom-header h2 {
+    font-size: 36px;
+    color: var(--escuro);
+}
+
+.custom-header span {
+    color: var(--laranja);
+}
+
+.calculator-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Formulário Esquerda */
+.calc-form {
+    flex: 1.5;
+    background: #f9fafb;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--borda);
+}
+
+.calc-group {
+    margin-bottom: 25px;
+}
+
+.calc-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--escuro);
+}
+
+.calc-group input[type="number"], 
+.calc-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Grid de Checkboxes */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.check-box {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    color: #555;
+}
+
+.check-box input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.check-box:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.check-box input:checked ~ .checkmark {
+    background-color: var(--azul);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check-box input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.check-box .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Resultado Direita */
+.calc-result {
+    flex: 1;
+    background: var(--escuro);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    position: sticky;
+    top: 100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.calc-result h3 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+}
+
+.total-price {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--laranja);
+    margin-bottom: 20px;
+}
+
+.total-price small {
+    display: block;
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 400;
+}
+
+.summary-list {
+    list-style: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.summary-list li {
+    margin-bottom: 8px;
+    border-bottom: 1px dotted rgba(255,255,255,0.1);
+    padding-bottom: 5px;
+}
+
+.note {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .calculator-wrapper {
+        flex-direction: column;
+    }
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Estilo para a lista de serviços */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.section-label {
+    display: block;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--escuro);
+}
+
+/* Estilo do Wrapper do Select de Backup */
+.select-box-wrapper {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.inline-label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.styled-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--escuro);
+    background-color: #f9f9f9;
 }
