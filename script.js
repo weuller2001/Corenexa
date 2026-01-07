@@ -127,3 +127,42 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+/* --- LÓGICA DO SLIDER DE BACKUP (Data Protection) --- */
+
+// Esta função é chamada diretamente pelo oninput no HTML
+function updateStorage(val) {
+    const display = document.getElementById('storageDisplay');
+    const btnText = document.getElementById('btnTextStorage');
+    const btnLink = document.getElementById('btnCustomStorage');
+    
+    // Verifica se os elementos existem antes de tentar alterar (Evita erro em outras páginas)
+    if (display && btnText && btnLink) {
+        
+        let formattedVal = "";
+        let linkVal = "";
+
+        if (val >= 1000) {
+            // Se for maior que 1000, converte para TB
+            let tbVal = (val / 1000).toFixed(1);
+            
+            // Remove o .0 se for redondo (ex: 2.0 vira 2)
+            if(tbVal.endsWith('.0')) {
+                tbVal = tbVal.replace('.0', '');
+            }
+            
+            formattedVal = tbVal + " TB";
+            linkVal = tbVal + "TB";
+        } else {
+            formattedVal = val + " GB";
+            linkVal = val + "GB";
+        }
+
+        // Atualiza o visual
+        display.innerText = formattedVal;
+        btnText.innerText = formattedVal;
+        
+        // Atualiza o link do botão para já chegar no contato com o valor certo
+        btnLink.href = `pageContato.html?plano=BackupPersonalizado&gb=${linkVal}`;
+    }
+}

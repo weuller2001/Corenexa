@@ -2250,3 +2250,357 @@ small {
         width: 100%;
     }
 }
+
+/* =========================================
+   ESTILOS EXCLUSIVOS: PÁGINA REVENDA (B2B)
+   ========================================= */
+
+/* Fundo geral da página de revenda */
+.partner-body {
+    background-color: #f4f6f9;
+}
+
+/* Hero Section Escura */
+.partner-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    padding: 80px 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de grade no fundo (opcional, dá ar técnico) */
+.partner-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.badge-tech {
+    background-color: rgba(77, 161, 206, 0.2);
+    color: #4DA1CE;
+    border: 1px solid #4DA1CE;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.partner-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #4DA1CE, #F09638);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 40px 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    display: inline-flex;
+}
+
+.stat strong {
+    display: block;
+    font-size: 32px;
+    color: white;
+}
+
+.stat span {
+    font-size: 14px;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.btn-large-tech {
+    display: inline-block;
+    background-color: #F09638;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-large-tech:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(240, 150, 56, 0.3);
+}
+
+/* Grid de Benefícios */
+.partner-benefits {
+    padding: 80px 5%;
+    background: white;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-card {
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.benefit-card:hover {
+    border-color: #4DA1CE;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.icon-tech {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+/* Como Funciona (Dark) */
+.how-it-works-dark {
+    background-color: #0f172a;
+    color: white;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.steps-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+    position: relative;
+    border-top: 3px solid #F09638;
+}
+
+.step-num {
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.1);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.step-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.step-item p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Formulário Tech */
+.partner-form-section {
+    padding: 80px 5%;
+    background-color: #f1f5f9;
+}
+
+.form-container-tech {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-top: 5px solid #0f172a;
+}
+
+.form-header-tech {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group-tech {
+    margin-bottom: 20px;
+}
+
+.input-group-tech label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+}
+
+.input-group-tech input, 
+.input-group-tech select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+.input-group-tech input:focus {
+    border-color: #4DA1CE;
+    box-shadow: 0 0 0 3px rgba(77, 161, 206, 0.1);
+}
+
+.row-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-submit-tech {
+    width: 100%;
+    padding: 15px;
+    background-color: #0f172a; /* Botão escuro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit-tech:hover {
+    background-color: #1e293b;
+}
+
+.footer-tech {
+    background-color: #0f172a;
+    color: #64748b;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #1e293b;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .partner-hero h1 { font-size: 32px; }
+    .hero-stats { flex-direction: column; gap: 20px; }
+    .row-2-col { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   ESTILO DO SLIDER DE ARMAZENAMENTO (BACKUP)
+   ========================================= */
+
+.storage-slider-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    margin-top: 30px;
+}
+
+.slider-label {
+    font-weight: 600;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+/* Estilo da Barra (Input Range) */
+input[type=range] {
+    flex: 1;
+    height: 8px;
+    border-radius: 5px;
+    background: #e2e8f0;
+    outline: none;
+    -webkit-appearance: none; /* Remove estilo padrão do navegador */
+    cursor: pointer;
+}
+
+/* Estilo da "Bolinha" do Slider */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--azul);
+    cursor: pointer;
+    border: 4px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: var(--laranja);
+}
+
+/* Visor de GB/TB */
+.gb-display {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--azul);
+    min-width: 150px;
+    text-align: center;
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+}
+
+.slider-note {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.custom-cta-box {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+/* Link discreto de revenda no rodapé */
+.revenda-link {
+    color: #666;
+    font-size: 12px;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+.revenda-link:hover {
+    color: var(--azul);
+}

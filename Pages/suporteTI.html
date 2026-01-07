@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/ico.png" />
+    <title>Planos de Suporte TI - CoreNexa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBYZSDWBYW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GBYZSDWBYW');
+    </script>
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/logo-corenexa.png" alt="CoreNexa Soluções em TI">
+            </a>
+        </div>
+
+        <div class="mobile-menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li class="dropdown-item">
+                    <a href="pageServicos.html" class="dropdown-link" style="color:var(--azul); font-weight:700;">Serviços ▾</a>
+                    <ul class="dropdown-menu">
+						<li><a href="gestao360.html">Gestão de TI 360º</a></li>
+						<li><a href="suporteTI.html">Suporte de TI</a></li>
+						<li><a href="servicosAvulsos.html">Serviços Avulsos</a></li>
+                    </ul>
+                </li>
+                <li><a href="pageSobre.html">Sobre</a></li>
+                <li><a href="pageContato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="intro-gestao">
+        <div class="container-intro">
+            <span class="tag-destaque">⚡ Suporte de TI Remoto</span>
+            <h1>TI Rápida e sem <br><span>Burocracia</span></h1>
+            <p>Escolha o pacote ideal para sua empresa. Tenha técnicos especialistas a um clique de distância, seja para 3 ou 15 computadores.</p>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="section-header">
+            <h2>Pacotes <span>Promocionais</span></h2>
+            <p>O melhor custo-benefício para quem busca tranquilidade imediata.</p>
+        </div>
+
+        <div class="pricing-grid">
+            
+            <div class="plan-card">
+                <h3 class="plan-name">Start</h3>
+                <p class="plan-limit">Até 3 Computadores</p>
+                
+                <div class="price-box">
+                    <span class="currency">R$</span>
+                    <span class="value">199,90</span>
+                    <span class="period">/mês (Anual)</span>
+                </div>
+                <p class="contract-info" style="background:#ffebee; color:#c62828;">Economia de R$ 40,00/mês</p>
+                
+                <ul class="features-list">
+                    <li>Suporte Remoto Ilimitado</li>
+                    <li>Atendimento WhatsApp</li>
+                </ul>
+
+                <a href="pageContato.html?plano=SuporteStart" class="btn-plan btn-outline">Contratar Start</a>
+            </div>
+
+            <div class="plan-card popular">
+                <div class="popular-tag">Melhor Custo-benefício</div>
+                <h3 class="plan-name">Business</h3>
+                <p class="plan-limit">Até 8 Computadores</p>
+
+                <div class="price-box">
+                    <span class="currency">R$</span>
+                    <span class="value">399,90</span>
+                    <span class="period">/mês (Anual)</span>
+                </div>
+                <p class="contract-info" style="background:#e8f5e9; color:#2e7d32;"><strong>Melhor Preço:</strong> R$ 49,90 por PC</p>
+                
+                <ul class="features-list">
+                    <li>Suporte Remoto Ilimitado</li>
+                    <li>Atendimento WhatsApp</li>
+                </ul>
+
+                <a href="pageContato.html?plano=SuporteBusiness" class="btn-plan btn-filled">Contratar Business</a>
+            </div>
+
+            <div class="plan-card">
+                <h3 class="plan-name">Corporate</h3>
+                <p class="plan-limit">Até 15 Computadores</p>
+
+                <div class="price-box">
+                    <span class="currency">R$</span>
+                    <span class="value">699,90</span>
+                    <span class="period">/mês (Anual)</span>
+                </div>
+                <p class="contract-info" style="background:#e3f2fd; color:#1565c0;">Ideal para estruturas maiores</p>
+                
+                <ul class="features-list">
+                    <li>Suporte Remoto Ilimitado</li>
+                    <li>Atendimento WhatsApp</li>
+                </ul>
+
+                <a href="pageContato.html?plano=SuporteCorporate" class="btn-plan btn-outline">Contratar Corporate</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="custom-plan" id="personalizado">
+        <div class="container">
+            <div class="custom-header">
+                <h2>Não se encaixou nos pacotes?</h2>
+                <p>Monte um plano <span>Personalizado</span> sob medida.</p>
+            </div>
+
+            <div class="calculator-wrapper" style="align-items: center;">
+                <div class="calc-form" style="max-width: 500px; width:100%;">
+                    
+                    <div class="calc-group">
+                        <label>Quantos computadores sua empresa tem?</label>
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <input type="range" id="rangeDevices" min="1" max="50" value="1" oninput="atualizarInput(this.value)" style="flex:1;">
+                            <input type="number" id="numDevices" value="1" min="1" max="100" oninput="atualizarRange(this.value)" style="width: 80px; text-align: center; font-weight: bold;">
+                        </div>
+                        <small style="color: #666; display: block; margin-top: 10px;">
+                            Base: R$ 120,00 (1º PC) + R$ 60,00 por adicional.
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="calc-result" style="width: 100%; max-width: 400px;">
+                    <h3>Valor Personalizado</h3>
+                    <div class="total-price">
+                        <small>Mensalidade:</small>
+                        R$ <span id="totalCustom">120,00</span>
+                    </div>
+                    
+                    <ul class="summary-list">
+                        <li id="resumoQtd">1 Computador</li>
+                        <li>Suporte Remoto Ilimitado</li>
+                    </ul>
+
+                    <a href="pageContato.html?plano=SuportePersonalizado" class="btn-cta">Solicitar Proposta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="../img/logo-corenexa.png" alt="CoreNexa" class="footer-logo-img">
+        <p>Conectando o presente ao futuro da tecnologia.</p>
+        <br>
+        <p>© 2025 CORENEXA Soluções em TI. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+    <script>
+        // Sincroniza o Slider com o Input de Número
+        function atualizarInput(val) {
+            document.getElementById('numDevices').value = val;
+            calcularPersonalizado();
+        }
+
+        function atualizarRange(val) {
+            document.getElementById('rangeDevices').value = val;
+            calcularPersonalizado();
+        }
+
+        function calcularPersonalizado() {
+            let qtd = parseInt(document.getElementById('numDevices').value);
+            
+            // Proteção contra números inválidos
+            if (!qtd || qtd < 1) {
+                qtd = 1;
+                document.getElementById('numDevices').value = 1;
+            }
+
+            // LÓGICA DO PREÇO:
+            // 1º Computador = 120
+            // Restante = 60 cada
+            let total = 0;
+
+            if (qtd === 1) {
+                total = 120;
+            } else {
+                total = 120 + ((qtd - 1) * 60);
+            }
+
+            // Atualiza o HTML
+            document.getElementById('totalCustom').innerText = total.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            
+            // Atualiza texto do resumo
+            document.getElementById('resumoQtd').innerText = qtd + (qtd === 1 ? ' Computador' : ' Computadores');
+        }
+    </script>
+</body>
+</html>
